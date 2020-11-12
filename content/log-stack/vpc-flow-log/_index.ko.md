@@ -1,12 +1,14 @@
 ---
-title: "VPC, Instance Log"
+title: "VPC Flow Log"
 weight: 330
 ---
 ***
 
-이 페이지에서는 **VPC Flow log**와 **CloudWatch log agent**를 인스턴스에 설치하여 각종 인스턴스 metric 수집 및 인스턴스 Log를 **CloudWatch Log**로 스트림 하는 구성을 만들어 볼 것 입니다.
+이 페이지에서는 웹서버 인스턴스를 배포 할 **VPC**와 **Public Subnet**을 생성 합니다.
 
-## VPC Flow Log
+그리고 VPC flow log를 생성하여 **Cloud Watch Log**와 **S3 Bucket**으로 보냅니다.
+
+## VPC 생성
 **lib/logging-wokrshop-stack.ts** 의 상단에 다음의 모듈들을 추가로 import 해줍니다.
 ```typescript
 import * as ec2 from '@aws-cdk/aws-ec2';
@@ -30,7 +32,10 @@ const demoVpc = new ec2.Vpc(this, 'DemoVpc', {
 });
 ```
 
-다음 코드도 추가하여 VPC Flow Log를 활성화 하고 해당 로그를 CloudWatch Log와 S3 bucket으로 전송 합니다.
+## VPC Flow Log
+다음 코드도 추가하여 **VPC Flow Log**를 활성화 하고 해당 로그를 **CloudWatch Log**와 **S3 Bucket**으로 전송 합니다.
+
+**S3 Bucket** 에는 **Reject** 된 트래픽만 전송 하도록 설정 하였습니다.
 ```typescript
 // Create LogGroup for VPC Flow Log
 const flowLogGroup = new logs.LogGroup(this, 'VpcFlowLogGroup', {
@@ -39,7 +44,13 @@ const flowLogGroup = new logs.LogGroup(this, 'VpcFlowLogGroup', {
 });
 
 // Enalbe VPC flow log. Send it to the LogGroup
-demoVpc.addFlowLog('FlowLogToLogGroup', {destination: ec2.FlowLogDestination.toCloudWatchLogs(flowLogGroup)});
-// Send the flow log to s3 bucket
-demoVpc.addFlowLog('FlowLogToS3', {destination: ec2.FlowLogDestination.toS3(logBucket)});
+demoVpc.addFlowLog('FlowLogToLogGroup', {
+    trafficType: ec2.FlowLogTrafficType.ALL,
+    destination: ec2.FlowLogDestination.toCloudWatchLogs(flowLogGroup)
+});
+// Send the rejected flow log to s3 bucket
+demoVpc.addFlowLog('FlowLogToS3', {
+    trafficType: ec2.FlowLogTrafficType.REJECT,
+    destination: ec2.FlowLogDestination.toS3(logBucket)});
 ```
+

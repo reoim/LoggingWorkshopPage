@@ -201,7 +201,7 @@ CloudFormation 콘솔
 
 **S3 Bucket**에도 CloudTrail Log가 생성 된 것을 확인 합니다.
 
-s3 prefix key를 따로 설정하지 않았기 때문에 AWS 서비스에서 발생하는 로그들은 default prefix `AWSlogs/AccountID/` 로 저장 됩니다.
+s3 prefix key를 따로 설정하지 않았기 때문에 기본적으로 `AWSlogs/AccountID/`를 prefix key로 생성 됩니다.
 ![S3 TrailLog](/images/log-stack/s3-trail.png)
 
 &nbsp;

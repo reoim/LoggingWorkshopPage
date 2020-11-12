@@ -1,5 +1,5 @@
 ---
-title: "Log Bucket 생성"
+title: "Log Bucket"
 weight: 310
 ---
 ***
