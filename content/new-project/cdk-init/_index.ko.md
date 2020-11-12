@@ -62,7 +62,6 @@ npm run watch
 워크샵이 진행 되는 동안 **npm run watch** 명령어가 실행 된 terminal 창을 열어둔 채로 유지 합니다. 해당 terminal 창을 닫으면 TypeScript가 자동 컴파일 되지 않습니다.
 {{% /notice %}}
 
-&nbsp;
-## 프로젝트 구조
-![CDK project structure](/images/project/structure.png)
+
+
 

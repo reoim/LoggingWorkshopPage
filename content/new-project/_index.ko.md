@@ -11,8 +11,8 @@ pre: "<b>3. </b>"
 
 워크샵을 통해 기본적인 사용법을 익혀 가실테지만, **CDK** 에 대한 더 많은 자료를 원하신다면 다음 링크를 참고해주세요.
 
+#### [AWS CDK Workshop](https://cdkworkshop.com/)
+
 #### [AWS CDK API Reference](https://docs.aws.amazon.com/cdk/api/latest/docs/aws-construct-library.html)
 
 #### [AWS CDK Developer Guide](https://docs.aws.amazon.com/cdk/latest/guide/home.html)
-
-#### [AWS CDK Workshop](https://cdkworkshop.com/)
