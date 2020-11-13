@@ -8,7 +8,7 @@ weight: 1
 ***
 
 
-![workshop architecture](/images/overview/archi.png)
+![workshop architecture](/images/overview/architecture.png)
 
 이 워크샵에서는 CloudWatch, CloudWatch Log를 이용하여 통합 로그 관리 환경과 Cross-Account, Cross-Region 모니터링 대시보드를 만들어 봅니다.
 

@@ -30,7 +30,7 @@ export class LoggingWorkshopStack extends cdk.Stack {
 import * as s3 from '@aws-cdk/aws-s3';
 ```
 
-**LoggingWorkshopStack** 클래스 안에 s3 bucket을 생성하는 다음의 코드를 추가 합니다.
+**LoggingWorkshopStack** 클래스 안 `// The code that defines your stack goes here` 주석 있는 부분에 s3 bucket을 생성하는 다음의 코드를 추가 합니다.
 ```typescript
 const logBucket = new s3.Bucket(this, 'LogBucket');
 ```

@@ -30,7 +30,10 @@ npm i @aws-cdk/aws-s3@$AWS_CDK_VERSION \
 @aws-cdk/aws-sns-subscriptions@$AWS_CDK_VERSION \
 @aws-cdk/aws-cloudtrail@$AWS_CDK_VERSION \
 @aws-cdk/aws-cloudwatch-actions@$AWS_CDK_VERSION \
-@aws-cdk/aws-apigateway@$AWS_CDK_VERSION
+@aws-cdk/aws-apigateway@$AWS_CDK_VERSION \
+@aws-cdk/aws-kinesis@$AWS_CDK_VERSION \
+@aws-cdk/aws-kinesisfirehose@$AWS_CDK_VERSION \
+@aws-cdk/aws-logs-destinations@$AWS_CDK_VERSION
 ```
 
 정상적으로 설치 되면 다음과 비슷한 결과 메세지를 확인 할 수 있습니다.
