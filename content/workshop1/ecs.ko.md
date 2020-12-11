@@ -1,5 +1,5 @@
 ---
-title: Session Manager 로그
+title: ECS 로그
 weight: 600
 pre: "<b>4-6. </b>"
 ---

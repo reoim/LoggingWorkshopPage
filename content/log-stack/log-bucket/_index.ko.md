@@ -7,7 +7,7 @@ weight: 310
 
 
 ## S3 bucket 생성
-제일 먼저, 로그를 적재 할 중앙 S3 Bucket을 생성 할 것 입니다.
+제일 먼저, 로그를 적재할 중앙 S3 Bucket을 생성 할 것 입니다.
 
 Cloud9 IDE에서 **lib/logging-wokrshop-stack.ts** 파일을 열어 봅니다.
 

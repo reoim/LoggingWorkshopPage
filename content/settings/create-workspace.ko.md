@@ -35,7 +35,7 @@ Cloud9 실습 환경은 root 사용자가 아닌 새로 생성한 Administrator 
 Cloud9 터미널 창에 다음의 명령어를 입력 합니다.
 ```bash
 # Setting environment variable for CDK Version
-echo 'export AWS_CDK_VERSION="1.72.0"' >> ~/.bashrc
+echo 'export AWS_CDK_VERSION="1.77.0"' >> ~/.bashrc
 source ~/.bashrc
 
 # Install aws-cdk
@@ -45,5 +45,5 @@ npm install -g --force aws-cdk@$AWS_CDK_VERSION
 
 ```
 $ cdk --version
-1.72.0 (build c2f38e8)
+1.77.0 (build c2f38e8)
 ```
