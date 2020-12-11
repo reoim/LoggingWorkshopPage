@@ -1,6 +1,6 @@
 ---
 title: "프로젝트 생성"
-weight: 200
+weight: 30
 pre: "<b>3. </b>"
 ---
 

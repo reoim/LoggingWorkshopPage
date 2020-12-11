@@ -2,10 +2,11 @@ title = "Centralized logging with CDK"
 #googleAnalytics = "UA-174210693-1"
 languageCode = "ko-KR"
 defaultContentLanguage = "ko"
-theme = "hugo-theme-learn"
+theme = "learn"
 showHeaderLanguageChooser=true
 defaultContentLanguageInSubdir= true
 relativeURLs=true
+CanonifyURLs=true
 #metaDataFormat = "yaml"
 #baseURL = "https://master.dsd6loerysixy.amplifyapp.com/"
 baseURL = "http://localhost:1313/"
@@ -18,7 +19,11 @@ home = [ "HTML", "RSS", "JSON"]
   disableBreadcrumb = false
   disableNextPrev = false
   themeVariant = "aws"
-  disableInlineCopyToClipBoard = false
+  disableSearch = false
+  disableAssetsBusting = true
+  disableLanguageSwitchingButton = false
+  disableShortcutsTitle = true
+  disableInlineCopyToClipBoard = true
   author = "Dongmin Lee"
 
 [[menu.shortcuts]] 
