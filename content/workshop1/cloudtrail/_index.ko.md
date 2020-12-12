@@ -99,6 +99,8 @@ export class CloudtrailStack extends cdk.Stack {
 }
 ```
 
+&nbsp;
+
 ## 엔트리포인트에 스택 로드하기
 `bin/centralized-logging-skeleton.ts` 파일을 열어 스택을 로드 합니다. 
 
@@ -120,6 +122,7 @@ const app = new cdk.App();
 const logBucketStack = new LogBucketStack(app, 'LogBucketStack', { env: envRegion });
 new CloudtrailStack(app, 'CloudtrailStack', { env: envRegion, bucket:logBucketStack.logBucket });
 ```
+&nbsp;
 
 ## 배포하기
 터미널 창에 다음 명령어를 입력하여 배포되는 인프라의 변경 사항을 확인 합니다.
@@ -143,6 +146,8 @@ Do you wish to deploy these changes (y/n)? y
 
 배포가 완료되면 [CloudFormation 콘솔](https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks?filteringText=CloudtrailStack&filteringStatus=active&viewNested=true&hideStacks=false)에서 배포된 CloudtrailStack을 확인합니다.
 
+&nbsp;
+
 ## 로그 확인
 `CloudFormation 콘솔`에서 CloudtrailStack의 `Resources` 탭을 클릭하여 배포된 리소스들을 확인합니다.
 
@@ -159,3 +164,10 @@ Do you wish to deploy these changes (y/n)? y
 default prefix 인 AWSLogs/{YourAccountID}/ 경로에 CloudTrail 로그가 생성 되었는지 확인합니다.
 
 ![Log Bucket](/images/workshop1/trail-bucket.png)
+
+&nbsp;
+
+## AWS Toolkit
+`Cloud9` 의 `AWS Toolkit` extention을 사용하면 편리하게 IDE에서 AWS 리소스 배포 상태를 확인 할 수 있습니다.
+
+![AWS toolkit](/images/workshop1/aws-explore.png)
