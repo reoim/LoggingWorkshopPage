@@ -101,8 +101,8 @@ export class CloudtrailStack extends cdk.Stack {
 
 &nbsp;
 
-## 엔트리포인트에 스택 로드하기
-`bin/centralized-logging-skeleton.ts` 파일을 열어 스택을 로드 합니다. 
+## 엔트리포인트에 스택 추가하기
+`bin/centralized-logging-skeleton.ts` 파일을 열어 스택을 추가할 것입니다.
 
 다음과 같이 코드를 수정하여 CloudTrailStack을 추가하고 로그 버킷 object를 전달 합니다.
 

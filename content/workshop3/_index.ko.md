@@ -1,5 +1,5 @@
 ---
-title: "실습 3, 멀티 리전/계정 로깅"
+title: "실습 6, 로그 분석 및 모니터링"
 chapter: true
 weight: 60
 pre: "<b>6. </b>"

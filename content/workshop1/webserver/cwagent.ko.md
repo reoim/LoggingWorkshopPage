@@ -320,8 +320,8 @@ export class WebServerStack extends cdk.Stack {
 
 &nbsp;
 
-## 엔트리포인트에 스택 로드하기
-`bin/centralized-logging-skeleton.ts` 파일을 열어 스택을 로드 합니다. 
+## 엔트리포인트에 스택 추가하기
+`bin/centralized-logging-skeleton.ts` 파일을 열어 스택을 추가할 것입니다.
 
 `CloudtrailStack` 밑에 다음 코드를 추가합니다.
 
@@ -365,11 +365,12 @@ cdk deploy WebServerStack
 
 인스턴스의 Public IPv4 Address를 복사하여 웹브라우저에 입력 해봅니다.
 
-다음과 같이 Apache Web Server가 정상적으로 기동 되었음을 확인 할 수 있습니다.
+다음과 같이 Apache Web Server가 정상적으로 기동 되었음을 확인할수 있습니다.
 
 ![샘플 페이지](/images/workshop1/website.png)
 
-[CloudWatch Log 콘솔](https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#logsV2:log-groups) 에 LogGroup들이 정상적으로 생성 되었는지도 확인 합니다.
-![Log Groups](/images/log-stack/log-group.png)
+[CloudWatch Log 콘솔](https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#logsV2:log-groups) 에 LogGroup들이 정상적으로 생성 되었는지도 확인합니다.
+![Log Groups](/images/workshop1/webserver-log.png)
 
- 
+로그 버킷에도 정상적으로 로깅이 되는지 확인합니다.
+![Log bucket](/images/workshop1/vpc-s3.png)
