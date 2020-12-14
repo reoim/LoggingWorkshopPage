@@ -6,6 +6,8 @@ pre: "<b>4-3. </b>"
 
 `CloudTrail` 로그를 `CloudWatch Log`와 `S3` 버킷에 수집하도록 활성화할 것입니다.
 
+`CloudTrail`은 기본적으로 로그를 `S3`에 직접 내보낼수 있습니다.
+
 ## 중앙 로그 버킷 공유
 
 먼저 중앙 로그 버킷 object를 props로 전달 받기 위해 `lib/cloudtrail-stack.ts` 파일을 열어 다음과 같이 수정합니다.

@@ -14,6 +14,8 @@ VPC flow 로그를 활성화하여 reject 로그들을 `CloudWatch Log` 로그 �
 
 ## 중앙 로그 버킷 공유
 
+VPC flow 로그는 `S3`에 직접 내보낼수 있습니다.
+
 먼저 중앙 로그 버킷 object를 props로 전달 받기 위해 `lib/webserver-stack.ts` 파일을 열어 다음과 같이 수정합니다.
 
 `LogBucketStack`에서 정의한 `interface`를 `import` 합니다.
