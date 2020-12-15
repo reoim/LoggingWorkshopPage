@@ -42,7 +42,7 @@ fields awsRegion, @timestamp, @message
 | limit 20
 ```
 
-![query](/images/workshop3/query-region.png)
+![query](/images/workshop3/query-region1.png)
 
 ## 필터 기능
 

@@ -5,7 +5,9 @@ pre: "<b>5-2.c. </b>"
 ---
 ***
 
-이 페이지에서는 로그 구독 필터 기능을 이용해 `CloudWatch Logs` 로그 그룹에 수집되는 로그를 Log destination으로 내보내는 설정을 알아볼 것입니다.
+이 페이지에서는 로그 생성을 위해 실습 1에서 배포한것과 동일한 간단한 서버리스 워크로드를 배포할 것입니다.
+
+그리고 로그 구독 필터 기능을 이용해 `CloudWatch Logs` 로그 그룹에 수집되는 로그를 Log destination으로 내보내는 설정을 알아볼 것입니다.
 
 ## API gateway, 람다 로깅
 
@@ -17,15 +19,8 @@ import * as apigw from '@aws-cdk/aws-apigateway';
 import * as logs from '@aws-cdk/aws-logs';
 ```
 
-미리 작성한 샘플 람다 코드는 `resources/lambda/sample.py` 에 있습니다.
+`contstructor` 안에 다음 코드를 추가하여 람다와 API gateway를 정의합니다. 실습 1에서 정의한 것과 동일한 코드입니다.
 
-`contstructor` 안에 아래 코드를 추가하여 샘플 코드를 람다로 정의합니다.
-
-기본적으로 람다는 자동으로 `/aws/lambda/<function-name>`의 형식으로 로그 그룹을 생성합니다.
-
-다만 이렇게 생성된 로그 그룹의 default 보관기간은 `Never Expire`로 설정되어 있습니다.
-
-아래 코드에서는 로그 보관 기간을 1주일로 설정 하였습니다.
 ```typescript
     // Defines an AWS Lambda resource
     const sample = new lambda.Function(this, 'SampleHandler', {
@@ -34,21 +29,13 @@ import * as logs from '@aws-cdk/aws-logs';
       handler: 'sample.handler',                        // file is "sample", function is "handler"
       logRetention: logs.RetentionDays.ONE_WEEK         // default: Never Expire
     });
-```
 
-아래 코드를 추가하여 API gateway 액세스 로깅을 위한 로그 그룹을 생성합니다. 보관 기간은 1일로 설정 하였습니다.
-
-```typescript
     // Defines a log group for API Gateway
     const apigwLogGroup = new logs.LogGroup(this, 'APIgatewayLogs', {
       logGroupName: 'APIgatewayLogs',
       retention: logs.RetentionDays.ONE_DAY
     });
-```
 
-아래 코드를 추가하여 위에서 정의한 람다 함수를 REST API로 등록 합니다.
-
-```typescript
     // Defines an API Gateway REST API resource backed by our "sample" function.
     const api = new apigw.LambdaRestApi(this, 'Endpoint', {
       handler: sample,
