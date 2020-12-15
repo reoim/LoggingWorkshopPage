@@ -4,7 +4,7 @@ weight: 300
 pre: "<b>4-3. </b>"
 ---
 
-`CloudTrail` 로그를 `CloudWatch Log`와 `S3` 버킷에 수집하도록 활성화할 것입니다.
+`CloudTrail` 로그를 `CloudWatch Logs`와 `S3` 버킷에 수집하도록 활성화할 것입니다.
 
 `CloudTrail`은 기본적으로 로그를 `S3`에 직접 내보낼수 있습니다.
 
@@ -48,7 +48,7 @@ import * as cloudtrail from '@aws-cdk/aws-cloudtrail';
 
 `constructor` 안에 다음 코드를 추가 후 저장합니다.
 
-`CloudWatch Log` 로그 그룹을 생성하고 `CloudTrail` 로그를 중앙 로그 버킷과 로그 그룹으로 보내도록 하는 코드 입니다.
+`CloudWatch Logs` 로그 그룹을 생성하고 `CloudTrail` 로그를 중앙 로그 버킷과 로그 그룹으로 보내도록 하는 코드 입니다.
 
 로그 그룹의 로그 보관기간은 1주일로 설정하였습니다.
 
@@ -114,9 +114,6 @@ import 'source-map-support/register';
 import * as cdk from '@aws-cdk/core';
 import { LogBucketStack } from '../lib/log-bucket-stack';
 import { CloudtrailStack } from '../lib/cloudtrail-stack';
-import { ServerlessStack } from '../lib/serverless-stack';
-import { WebServerStack } from '../lib/webserver-stack';
-import { LogDestinationStack } from '../lib/log-destination-stack';
 
 const envRegion = { region: 'us-east-2' };
 const app = new cdk.App();

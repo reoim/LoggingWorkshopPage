@@ -105,21 +105,28 @@ Resources:
 ```
 
 
-## CDK deploy
-이제 CDK로 정의한 **S3 Bucket**을 배포 합니다.
+## 앤트리포인트에 스택 추가하기
 
-**bin/centralized-logging-skeleton.ts** 파일을 열어 엔트리 포인트에 다음과 같이 LogBucketStack이 잘 추가 되었는지 확인 합니다.
+**bin/centralized-logging-skeleton.ts** 파일을 열어 LogBucketStack을 추가할 것입니다.
 
+다음 코드를 추가하여 LogBucketStack을 import 합니다.
 
+```typescript
+import { LogBucketStack } from '../lib/log-bucket-stack';
+```
+
+`const app = new cdk.App();` 코드 밑에 다음 코드를 추가합니다.
+
+```typescript
+new LogBucketStack(app, 'LogBucketStack', { env: envRegion });
+```
+
+완성된 코드는 다음과 같습니다.
 ```typescript
 #!/usr/bin/env node
 import 'source-map-support/register';
 import * as cdk from '@aws-cdk/core';
 import { LogBucketStack } from '../lib/log-bucket-stack';
-import { CloudtrailStack } from '../lib/cloudtrail-stack';
-import { ServerlessStack } from '../lib/serverless-stack';
-import { WebServerStack } from '../lib/webserver-stack';
-import { LogDestinationStack } from '../lib/log-destination-stack';
 
 const envRegion = { region: 'us-east-2' };
 const app = new cdk.App();
@@ -128,6 +135,8 @@ new LogBucketStack(app, 'LogBucketStack', { env: envRegion });
 
 ```
 
+## CDK deploy
+이제 CDK로 정의한 **S3 Bucket**을 배포 합니다.
 
 다음 명령어를 터미널 창에 입력하여 LogBucketStack을 배포 합니다.
 ```

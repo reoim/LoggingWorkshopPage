@@ -264,8 +264,8 @@ import 'source-map-support/register';
 import * as cdk from '@aws-cdk/core';
 import { LogBucketStack } from '../lib/log-bucket-stack';
 import { CloudtrailStack } from '../lib/cloudtrail-stack';
-import { ServerlessStack } from '../lib/serverless-stack';
 import { WebServerStack } from '../lib/webserver-stack';
+import { ServerlessStack } from '../lib/serverless-stack';
 import { EcsStack } from '../lib/ecs-stack';
 
 const envRegion = { region: 'us-east-2' };

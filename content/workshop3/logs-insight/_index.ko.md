@@ -1,5 +1,5 @@
 ---
-title: "Log Insight"
+title: "Logs Insight"
 weight: 100
 chapter: true
 pre: "<b>6-1. </b>"
