@@ -1,7 +1,7 @@
 ---
 title: 베이스 프로젝트 클론
-weight: 100
-pre: "<b>4-1. </b>"
+weight: 220
+pre: "<b>5-2.b. </b>"
 ---
 
 **Cloud9** 터미널 창에서 다음 명령어로 베이스 프로젝트를 클론 합니다.
@@ -68,7 +68,7 @@ cdk bootstrap
 
 다음과 같이 CDK Toolkit에 필요한 리소스가 배포 됩니다.
 ```term
- ⏳  Bootstrapping environment aws://111111111111/us-east-2...
+ ⏳  Bootstrapping environment aws://222222222222/us-east-2...
 CDKToolkit: creating CloudFormation changeset...
 [██████████████████████████████████████████████████████████] (3/3)
 ```

@@ -15,15 +15,15 @@ pre: "<b>4. </b>"
 
 실습의 편의를 위해서 하나의 로그 버킷으로 Standard 클래스를 사용할 것이지만 로그 타입별로 버킷을 분리하거나, 버킷의 prefix 별로 분리하여 서로 다른 스토리지 클래스를 적용하실 수도 있습니다.
 
+`CloudTrail 로그`, `Vpc flow 로그` 등 몇몇 AWS 서비스들은 직접 S3로 로그를 내보낼 수 있습니다.
+
 `CloudWatch Log`에서 S3로 로그를 내보내는 방법은 다음 링크를 참고하시길 바랍니다.
 
 [Amazon S3로 로그 데이터 내보내기](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/S3Export.html)
 
-`CloudTrail 로그`, `Vpc flow 로그` 등 몇몇 AWS 서비스들은 직접 S3로 로그를 내보낼수 있습니다.
-
 &nbsp;
 
-실습은 다음과 같은 순서로 진행 됩니다.
+실습 1 은 다음과 같은 순서로 진행 됩니다.
 
 {{% children showhidden="false" %}}
 

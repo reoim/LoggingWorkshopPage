@@ -1,6 +1,7 @@
 ---
 title: 누가 이 워크샵을 하면 좋을까?
 weight: 100
+chapter: true
 pre: "<b>1-1. </b>"
 ---
 

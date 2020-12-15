@@ -1,6 +1,6 @@
 ---
 title: CDK 맛보기
-# chapter: true
+chapter: true
 weight: 30
 pre: "<b>3. </b>"
 ---

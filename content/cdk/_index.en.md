@@ -1,6 +1,6 @@
 ---
 title: Intro to CDK
-# chapter: true
+chapter: true
 weight: 30
 pre: "<b>3. </b>"
 ---

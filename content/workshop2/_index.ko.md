@@ -2,7 +2,7 @@
 title: "실습 2, 멀티 계정 중앙 로깅"
 chapter: true
 weight: 50
-pre: "<b>6. </b>"
+pre: "<b>5. </b>"
 ---
 
 
@@ -17,6 +17,23 @@ pre: "<b>6. </b>"
 
 이번 실습에서는 멀티 계정의 CloudWatch 로그 그룹에 적재되는 로그들을 중앙 로그 버킷에 전송하는 인프라를 만들어볼 것입니다.
 
+{{% notice info %}}
+이 실습을 시작하기 위해서는 총 두개의 AWS 계정, 또는 Event Engine 계정이 필요합니다. 편의상 중앙 로그 버킷이 위치할 첫번째 계정 ID를 `111111111111`, 로그를 생성하고 전송할 두번째 계정 ID를 `222222222222` 라고 가정합니다.
+{{% /notice %}}
 
+&nbsp;
+
+실습은 다음과 같은 순서로 진행 됩니다.
 
 {{% children showhidden="false" %}}
+
+&nbsp;
+
+## References
+[Blog: Centralize Amazon CloudWatch Logs using AWS CDK](https://aws.amazon.com/ko/blogs/developer/build-infrastructure-for-centralized-logging-using-aws-cdk/)
+
+[Blog: AWS 멀티 어카운트 환경을 위한 통합 로깅 방법](https://aws.amazon.com/ko/blogs/korea/central-logging-in-multi-account-environments/)
+
+[Blog: Central Logging in Multi-Account Environments](https://awsfeed.com/uncategorized/central-logging-in-multi-account-environments)
+
+[AWS Document: Cross-Account Log Data Sharing with Subscriptions](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CrossAccountSubscriptions.html)

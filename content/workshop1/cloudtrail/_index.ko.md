@@ -169,7 +169,7 @@ default prefix 인 AWSLogs/{YourAccountID}/ 경로에 CloudTrail 로그가 생�
 
 &nbsp;
 
-## AWS Toolkit
-`Cloud9` 의 `AWS Toolkit` extention을 사용하면 편리하게 IDE에서 AWS 리소스 배포 상태를 확인 할 수 있습니다.
+## AWS Explorer
+`Cloud9` 의 `AWS Explorer`를 이용하면 편리하게 IDE에서 AWS 리소스 배포 상태를 확인 할 수 있습니다.
 
 ![AWS toolkit](/images/workshop1/aws-explore.png)

@@ -1,5 +1,5 @@
 ---
-title: "AWS 이벤트로 시작하기"
+title: "AWS 이벤트 엔진으로 시작하기"
 weight: 200
 pre: "<b>2-2. </b>"
 ---
