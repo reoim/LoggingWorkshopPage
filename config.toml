@@ -1,4 +1,4 @@
-title = "Centralized logging with CDK"
+title = "Centralized logging with CDK workshp"
 #googleAnalytics = "UA-174210693-1"
 languageCode = "ko-KR"
 defaultContentLanguage = "ko"
@@ -8,8 +8,8 @@ defaultContentLanguageInSubdir= true
 relativeURLs=true
 CanonifyURLs=true
 #metaDataFormat = "yaml"
-#baseURL = "https://master.dsd6loerysixy.amplifyapp.com/"
-baseURL = "http://localhost:1313/"
+baseURL = "https://main.d1xohcr6zze1hs.amplifyapp.com/"
+#baseURL = "http://localhost:1313/"
 
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
