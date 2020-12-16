@@ -1,4 +1,4 @@
-## Centralized Logging on AWS with CDK Workshop
+## Centralized Logging with CDK Workshop
 
 Repo for Hugo workshop page.
 

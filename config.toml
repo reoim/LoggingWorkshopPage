@@ -13,7 +13,7 @@ metaDataFormat = "yaml"
 pygmentsCodeFences = true
 pygmentsStyle = "monokai"
 
-baseURL = "https://main.d1xohcr6zze1hs.amplifyapp.com/"
+baseURL = "https://main.d1xohcr6zze1hs.amplifyapp.com/ko/"
 #baseURL = "http://localhost:1313/"
 
 
@@ -45,6 +45,11 @@ home = [ "HTML", "RSS", "JSON"]
 [[menu.shortcuts]]
   name = "<i class='fab fa-github'></i> Base project repo"
   url = "https://github.com/reoim/centralized-logging-skeleton.git"
+  weight = 1030
+
+[[menu.shortcuts]]
+  name = "<i class='far fa-envelope'></i> feedback"
+  url = "https://github.com/reoim/LoggingWorkshopPage/issues"
   weight = 1040
 
 [Languages]
