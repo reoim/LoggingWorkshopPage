@@ -13,7 +13,7 @@ metaDataFormat = "yaml"
 pygmentsCodeFences = true
 pygmentsStyle = "monokai"
 
-baseURL = "https://main.d1xohcr6zze1hs.amplifyapp.com/ko/"
+baseURL = "https://main.d1xohcr6zze1hs.amplifyapp.com"
 #baseURL = "http://localhost:1313/"
 
 
