@@ -1,8 +1,8 @@
 ---
 title: "CloudWatch 대시보드"
-weight: 300
+weight: 400
 chapter: true
-pre: "<b>6-3. </b>"
+pre: "<b>6-4. </b>"
 ---
 
 Amazon CloudWatch 대시보드를 사용하여 여러 리전/계정에 분산되어 있는 리소스들에 대한 지표 및 경보를 단일 View에서 모니터링 할수 있습니다.
@@ -16,10 +16,6 @@ Amazon CloudWatch 대시보드는 다음과 같은 기능을 제공 합니다.
 
 
 &nbsp;
-
-실습은 다음과 같은 순서로 진행 됩니다.
-
-{{% children showhidden="false" %}}
 
 ## References
 

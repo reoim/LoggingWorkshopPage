@@ -60,18 +60,15 @@ import * as logs from '@aws-cdk/aws-logs';
     "aws-cdk:enableDiffNoFail": "true",
     "@aws-cdk/core:stackRelativeExports": "true",
     "@aws-cdk/aws-ecr-assets:dockerIgnoreSupport": true,
-    "@aws-cdk/aws-secretsmanager:parseOwnedSecretName": true
+    "@aws-cdk/aws-secretsmanager:parseOwnedSecretName": true,
+    "destination": "arn:aws:logs:{region}:{accountid}:destination:{log-destination-name}",
+    "email": "example@email.com"
   }
 }
 ```
 
-[Log destination 설정 실습](../../log-destination)에서 메모해둔 Log destination의 ARN을 context에 추가 할 것입니다.
-
-context 안에 다음 값을 추가합니다.
-
-```
-"destination":"{Log destination ARN}"
-```
+`"destination"`의  `"arn:aws:logs:{region}:{accountid}:destination:{log-destination-name}",` 값을 
+[Log destination 설정 실습](../../log-destination)에서 메모해둔 Log destination의 ARN으로 수정합니다.
 
 수정된 cdk.json 파일은 다음과 같을 것입니다.
 ```json
@@ -83,7 +80,8 @@ context 안에 다음 값을 추가합니다.
     "@aws-cdk/core:stackRelativeExports": "true",
     "@aws-cdk/aws-ecr-assets:dockerIgnoreSupport": true,
     "@aws-cdk/aws-secretsmanager:parseOwnedSecretName": true,
-    "destination":"arn:aws:logs:us-east-2:111111111111:destination:CentralLogDestination"
+    "destination":"arn:aws:logs:us-east-2:111111111111:destination:CentralLogDestination",
+    "email": "example@email.com"
   }
 }
 

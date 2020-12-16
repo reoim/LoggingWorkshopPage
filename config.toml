@@ -37,13 +37,8 @@ home = [ "HTML", "RSS", "JSON"]
   weight = 1020
 
 [[menu.shortcuts]]
-  name = "<i class='fab fa-facebook-square'></i> Facebook"
-  url = "https://www.facebook.com/groups/awskrug/"
-  weight = 1030
-
-[[menu.shortcuts]]
   name = "<i class='fab fa-github'></i> Github"
-  url = "https://github.com/studydev/hugo-workshop"
+  url = "https://github.com/reoim/centralized-logging-skeleton.git"
   weight = 1040
 
 [Languages]

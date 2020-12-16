@@ -1,7 +1,7 @@
 ---
 title: "위젯 추가"
-weight: 320
-pre: "<b>6-3.b. </b>"
+weight: 420
+pre: "<b>6-4.b. </b>"
 ---
 ***
 

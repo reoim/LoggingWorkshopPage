@@ -1,8 +1,8 @@
 ---
 title: "Logs Insight"
-weight: 100
+weight: 200
 chapter: true
-pre: "<b>6-1. </b>"
+pre: "<b>6-2. </b>"
 ---
 
 CloudWatch Logs Insights를 사용하면 Amazon CloudWatch Logs에서 로그 데이터를 대화식으로 검색해 분석할 수 있습니다. 운영상의 문제에 보다 효율적이고 효과적으로 대처할 수 있도록 쿼리를 수행할 수 있습니다. 문제가 발생하면 CloudWatch Logs Insights를 사용해 잠재적인 원인을 식별하고 배포된 수정 사항을 확인할 수 있습니다.
