@@ -64,6 +64,12 @@ import * as elbv2 from '@aws-cdk/aws-elasticloadbalancingv2';
 
 다음 코드를 추가하여 IAM role을 생성하고 위에서 생성한 로그 그룹에 대한 권한을 부여합니다.
 ```typescript
+
+    // Create IAM role for ECS
+    const containerTaskRole = new iam.Role(this, "TaskRole", {
+      assumedBy: new iam.ServicePrincipal('ecs-tasks.amazonaws.com')
+    });
+    
     // Add permissions of the log group to the role
     containerTaskRole.addToPolicy(new iam.PolicyStatement({
         effect: iam.Effect.ALLOW,
@@ -85,11 +91,6 @@ ECS 컨테이너를 정의합니다. firelens 로그드라이버를 사용하여
 firelens option에 대한 내용은 [amazon-ccloudwatch-logs-for-fluent-bit](https://github.com/aws/amazon-cloudwatch-logs-for-fluent-bit)에서 확인할수 있습니다. 
 
 ```typescript
-    // Define taskRole in task definition
-    const taskDefinition = new ecs.Ec2TaskDefinition(this, 'TaskDef', {
-      taskRole: containerTaskRole
-    });
-    
     const container = taskDefinition.addContainer('EcsSampleContainer', {
       image: ecs.ContainerImage.fromRegistry("amazon/amazon-ecs-sample"),
       memoryLimitMiB: 512, 

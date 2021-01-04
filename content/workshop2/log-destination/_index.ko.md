@@ -85,7 +85,7 @@ Firehose delivery stream을 생성하는 설정입니다.
 기본적으로 5분마다 로그를 전송하며 buffer에 쌓인 로그가 5MB 이상일 경우 바로 로그를 전송하도록 설정 하였습니다.
 ```typescript
     // create firehose delivery stream
-    const firehoseDliverySteram = new firehose.CfnDeliveryStream(this, "FireHoseStream", {
+    const firehoseDeliverySteram = new firehose.CfnDeliveryStream(this, "FireHoseStream", {
         deliveryStreamName: "FireHoseStream",
         deliveryStreamType: "DirectPut",
         s3DestinationConfiguration: {
@@ -191,7 +191,7 @@ Firehose delivery stream을 생성하는 설정입니다.
     const logDestination = new logs.CfnDestination(this, 'LogDestination', {
       destinationName: 'CentralLogDestination',
       roleArn: logDestinationRole.roleArn,
-      targetArn: firehoseDliverySteram.attrArn,
+      targetArn: firehoseDeliverySteram.attrArn,
       destinationPolicy: logPolicy
     });
 ```
@@ -200,7 +200,7 @@ Firehose delivery stream을 생성하는 설정입니다.
 
 ```typescript
     // Make sure the Firehose delivery stream is provisioned when deploy the log destination.
-    logDestination.addDependsOn(firehoseDliverySteram);
+    logDestination.addDependsOn(firehoseDeliverySteram);
 ```
 
 다음 코드를 추가하여 생성된 `Log destination`의 ARN을 `CloudFormation` Output으로 출력합니다.
@@ -248,7 +248,7 @@ export class LogDestinationStack extends cdk.Stack {
     );
  
     // create firehose delivery stream
-    const firehoseDliverySteram = new firehose.CfnDeliveryStream(this, "FireHoseStream", {
+    const firehoseDeliverySteram = new firehose.CfnDeliveryStream(this, "FireHoseStream", {
         deliveryStreamName: "FireHoseStream",
         deliveryStreamType: "DirectPut",
         s3DestinationConfiguration: {
@@ -283,12 +283,12 @@ export class LogDestinationStack extends cdk.Stack {
     const logDestination = new logs.CfnDestination(this, 'LogDestination', {
       destinationName: 'CentralLogDestination',
       roleArn: logDestinationRole.roleArn,
-      targetArn: firehoseDliverySteram.attrArn,
+      targetArn: firehoseDeliverySteram.attrArn,
       destinationPolicy: logPolicy
     });
     
     // Make sure the Firehose delivery stream is provisioned when deploy the log destination.
-    logDestination.addDependsOn(firehoseDliverySteram);
+    logDestination.addDependsOn(firehoseDeliverySteram);
     
   
     new cdk.CfnOutput(this, 'Log destination arn', { value: logDestination.attrArn });

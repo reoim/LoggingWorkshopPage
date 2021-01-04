@@ -30,12 +30,12 @@ import * as s3 from '@aws-cdk/aws-s3';
 
 버킷을 공유하려면 버킷 object를 다른 stack에게 보내야 합니다.
 
-`constructor` 위에 readonly 값을 public으로 정의합니다.
+**constructor** 위에 readonly 값을 public으로 정의합니다.
 ```typescript
     public readonly logBucket: s3.Bucket;
 ```
 
-`constoructor`의 주석 `// The code that defines your stack goes here` 라인 밑에 다음 코드를 추가합니다.
+**constoructor**의 주석 `// The code that defines your stack goes here` 라인 밑에 다음 코드를 추가합니다.
 
 s3 버킷을 생성하고 위에서 정의한 public 변수에 버킷 object를 지정 합니다.
 ```typescript
