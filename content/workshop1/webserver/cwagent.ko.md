@@ -86,6 +86,25 @@ CloudWatch Agent 에 대한 보다 자세한 설정은 다음 링크를 참고 �
 
 &nbsp;
 
+## CloudWatch Agent 로그 그룹 생성하기
+
+CloudWatch Agent가 설치되고 실행되면 **CloudWatch Agent 구성 파일**에 명시한 `log_group_name`과 `log_stream_name`으로 로그 그룹이 자동으로 생성 되지만 
+
+이 경우 Retention 기간이 Never Expire로 설정 되기 때문에 다음과 같이 코드를 추가하여 로그 그룹을 생성하고 retention 기간을 설정 합니다. 이 실습에서는 로그 보관기간을 1주일로 설정 합니다.
+
+실습 편의를 위해서 로그 그룹의 RemovalPolicy는 DESTROY로 설정합니다. (기본값은 RETAIN으로 되어있습니다.)
+
+```typescript
+    // Create log group for cloudwatch agent
+    const webServerLogGroup = new logs.LogGroup(this, 'WebServerLogGroup', {
+      logGroupName: 'WebServerLogGroup',
+      retention: logs.RetentionDays.ONE_WEEK,
+      removalPolicy: cdk.RemovalPolicy.DESTROY
+    });
+```
+
+&nbsp;
+
 ## CDK로 통합 CloudWatch Logs Agent 설치하기
 
 **lib/webserver-stack.ts** 파일에서 [VPC Flow 로그](../vpc) 코드 밑에 다음의 코드를 추가 합니다.
@@ -202,6 +221,8 @@ demo_instance.addSecurityGroup(instance_sg);
 
 &nbsp;
 
+다음 코드를 추가하여 
+
 완성된 코드는 다음과 같습니다.
 
 ```typescript
@@ -246,6 +267,12 @@ export class WebServerStack extends cdk.Stack {
       destination: ec2.FlowLogDestination.toS3(props.bucket)
     });
     
+    // Create log group for cloudwatch agent
+    const webServerLogGroup = new logs.LogGroup(this, 'WebServerLogGroup', {
+      logGroupName: 'WebServerLogGroup',
+      retention: logs.RetentionDays.ONE_WEEK,
+      removalPolicy: cdk.RemovalPolicy.DESTROY
+    });
     
     // (Config) Install the unified CloudWatch agent by cfn-init
     const configInstallAgent = new ec2.InitConfig([
@@ -320,12 +347,7 @@ export class WebServerStack extends cdk.Stack {
     
     // Add the security group to the instance
     demo_instance.addSecurityGroup(instance_sg);
-    
-      // Create log group for cloudwatch agent
-    const webServerLogGroup = new logs.LogGroup(this, 'WebServerLogGroup', {
-      logGroupName: 'WebServerLogGroup',
-      retention: logs.RetentionDays.ONE_MONTH
-    });
+
   }
 }
 ```

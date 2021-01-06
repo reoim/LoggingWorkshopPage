@@ -38,10 +38,12 @@ import * as s3 from '@aws-cdk/aws-s3';
 **constoructor**의 주석 `// The code that defines your stack goes here` 라인 밑에 다음 코드를 추가합니다.
 
 s3 버킷을 생성하고 위에서 정의한 public 변수에 버킷 object를 지정 합니다.
+
+실습 편의를 위해서 S3 bucket의 RemovalPolicy는 DESTROY로 설정합니다. (기본값은 RETAIN으로 되어있습니다.)
 ```typescript
 // Create s3 bucket to store logs
 const bucket = new s3.Bucket(this, 'LogBucket', {
-    bucketName: cdk.PhysicalName.GENERATE_IF_NEEDED
+    removalPolicy: cdk.RemovalPolicy.DESTROY
 });
 
 this.logBucket = bucket;
@@ -70,7 +72,7 @@ export class LogBucketStack extends cdk.Stack {
     
     // Create s3 bucket to store logs
     const bucket = new s3.Bucket(this, 'LogBucket', {
-      bucketName: cdk.PhysicalName.GENERATE_IF_NEEDED
+      removalPolicy: cdk.RemovalPolicy.DESTROY
     });
     
     this.logBucket = bucket;

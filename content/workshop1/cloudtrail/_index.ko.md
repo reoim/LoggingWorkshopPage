@@ -65,11 +65,14 @@ import * as cloudtrail from '@aws-cdk/aws-cloudtrail';
 
 로그 그룹의 로그 보관기간은 1주일로 설정하였습니다.
 
+실습 편의를 위해서 로그 그룹의 RemovalPolicy는 DESTROY로 설정합니다. (기본값은 RETAIN으로 되어있습니다.)
+
 ```typescript
     // Create CloudtWatch LogGroup for ClouTrail log
     const trailLogGroup = new logs.LogGroup(this, 'TrailLog', {
       logGroupName: 'TrailLog',
-      retention: logs.RetentionDays.ONE_WEEK
+      retention: logs.RetentionDays.ONE_WEEK,
+      removalPolicy: cdk.RemovalPolicy.DESTROY
     });
     
     // Send CloudTrail log to logGroup and bucket
@@ -99,7 +102,8 @@ export class CloudtrailStack extends cdk.Stack {
     // Create CloudtWatch LogGroup for ClouTrail log
     const trailLogGroup = new logs.LogGroup(this, 'TrailLog', {
       logGroupName: 'TrailLog',
-      retention: logs.RetentionDays.ONE_WEEK
+      retention: logs.RetentionDays.ONE_WEEK,
+      removalPolicy: cdk.RemovalPolicy.DESTROY
     });
     
     // Send CloudTrail log to logGroup and bucket

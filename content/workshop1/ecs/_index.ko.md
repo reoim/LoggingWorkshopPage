@@ -5,7 +5,9 @@ pre: "<b>4-6. </b>"
 ---
 ***
 
-이 페이지에서는 **CDK를 이용하여 샘플 ECS 애플리케이션을 배포하고 firelens 로그 드라이버를 사용하여 CloudWatch Logs에 로깅하는 설정**을 알아볼 것입니다.
+이 페이지에서는 **CDK를 이용하여 샘플 ECS 애플리케이션을 배포하고** 
+
+**Firelens 로그 드라이버를 사용하여 CloudWatch Logs에 로깅하는 설정**을 알아볼 것입니다.
 
 &nbsp;
 
@@ -58,7 +60,8 @@ import * as elbv2 from '@aws-cdk/aws-elasticloadbalancingv2';
     // Create CloudtWatch LogGroup for ClouTrail log
     const ecsLogGroup = new logs.LogGroup(this, 'EcsLog', {
       logGroupName: 'EcsLog',
-      retention: logs.RetentionDays.ONE_WEEK
+      retention: logs.RetentionDays.ONE_WEEK,
+      removalPolicy: cdk.RemovalPolicy.DESTROY
     });
 ```
 
@@ -176,7 +179,8 @@ export class EcsStack extends cdk.Stack {
     // Create CloudtWatch LogGroup for ClouTrail log
     const ecsLogGroup = new logs.LogGroup(this, 'EcsLog', {
       logGroupName: 'EcsLog',
-      retention: logs.RetentionDays.ONE_WEEK
+      retention: logs.RetentionDays.ONE_WEEK,
+      removalPolicy: cdk.RemovalPolicy.DESTROY
     });
     
     // Create IAM role for ECS

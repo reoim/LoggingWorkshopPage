@@ -39,15 +39,18 @@ import fs = require('fs');
 
 다음 코드를 추가하여 VPC Flow Log를 저장할 로그 그룹을 생성 합니다. 로그 보관 기간은 1주일로 지정하였습니다.
 
+실습 편의를 위해서 로그 그룹의 RemovalPolicy는 DESTROY로 설정합니다. (기본값은 RETAIN으로 되어있습니다.)
+
 ```typescript
     // Create LogGroup for VPC Flow Log
     const flowLogGroup = new logs.LogGroup(this, 'VpcFlowLogGroup', {
       logGroupName: 'VpcFlowLogGroup',
-      retention: logs.RetentionDays.ONE_WEEK
+      retention: logs.RetentionDays.ONE_WEEK,
+      removalPolicy: cdk.RemovalPolicy.DESTROY
     });
 ```
 
-다음 코드를 추가하여 `VPC Flow Log`를 생성한 로그 그룹과 로그 버킷에 적재하도록 구성합니다.
+다음 코드를 추가하여 **VPC Flow Log**를 생성한 로그 그룹과 로그 버킷에 적재하도록 구성합니다.
 
 트래픽은 Reject 된 트래픽만 수집하도록 설정하였습니다.
 
@@ -93,7 +96,8 @@ export class WebServerStack extends cdk.Stack {
     // Create LogGroup for VPC Flow Log
     const flowLogGroup = new logs.LogGroup(this, 'VpcFlowLogGroup', {
       logGroupName: 'VpcFlowLogGroup',
-      retention: logs.RetentionDays.ONE_WEEK
+      retention: logs.RetentionDays.ONE_WEEK,
+      removalPolicy: cdk.RemovalPolicy.DESTROY
     });
     
     // Enalbe VPC flow log. Send it to the LogGroup

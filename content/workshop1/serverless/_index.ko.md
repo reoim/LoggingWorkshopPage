@@ -50,7 +50,8 @@ import * as logs from '@aws-cdk/aws-logs';
     // Defines a log group for API Gateway
     const apigwLogGroup = new logs.LogGroup(this, 'APIgatewayLogs', {
       logGroupName: 'APIgatewayLogs',
-      retention: logs.RetentionDays.ONE_WEEK
+      retention: logs.RetentionDays.ONE_WEEK,
+      removalPolicy: cdk.RemovalPolicy.DESTROY
     });
 ```
 
@@ -92,7 +93,8 @@ export class ServerlessStack extends cdk.Stack {
     // Defines a log group for API Gateway
     const apigwLogGroup = new logs.LogGroup(this, 'APIgatewayLogs', {
       logGroupName: 'APIgatewayLogs',
-      retention: logs.RetentionDays.ONE_WEEK
+      retention: logs.RetentionDays.ONE_WEEK,
+      removalPolicy: cdk.RemovalPolicy.DESTROY
     });
     
     // Defines an API Gateway REST API resource backed by our "sample" function.
