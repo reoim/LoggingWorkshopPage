@@ -9,7 +9,7 @@ pre: "<b>4-5. </b>"
 
 API gateway 로깅에는 실행 로깅과 액세스 로깅이라는 두 가지 유형이 있습니다. 
 
-실행 로깅의 경우 API 배포시 API gateway에서 자동으로 `API-Gateway-Execution-Logs_{rest-api-id}/{stage_name}`의 형식으로 `CloudWatch` 로그 그룹을 생성 합니다.
+실행 로깅의 경우 API 배포시 API gateway에서 자동으로 `API-Gateway-Execution-Logs_{rest-api-id}/{stage_name}`의 형식으로 **CloudWatch Logs** 로그 그룹을 생성 합니다.
 
 액세스 로깅은 누가 API에 액세스했고 호출자가 API에 어떻게 액세스했는지 로깅하는 것입니다. 
 
@@ -17,7 +17,7 @@ API gateway 로깅에는 실행 로깅과 액세스 로깅이라는 두 가지 �
 
 ## API gateway, 람다 로깅
 
-`lib/serverless-stack.ts` 파일에 다음 코드를 추가하여 필요한 모듈들을 import 합니다.
+**lib/serverless-stack.ts** 파일에 다음 코드를 추가하여 필요한 모듈들을 import 합니다.
 
 ```typescript
 import * as lambda from '@aws-cdk/aws-lambda';
@@ -25,7 +25,7 @@ import * as apigw from '@aws-cdk/aws-apigateway';
 import * as logs from '@aws-cdk/aws-logs';
 ```
 
-미리 작성한 샘플 람다 코드는 `resources/lambda/sample.py` 에 있습니다.
+미리 작성한 샘플 람다 코드는 **resources/lambda/sample.py** 에 있습니다.
 
 `contstructor` 안에 아래 코드를 추가하여 샘플 코드를 람다로 정의합니다.
 
@@ -109,7 +109,7 @@ export class ServerlessStack extends cdk.Stack {
 
 ## 엔트리포인트에 스택 추가하기
 
-`bin/centralized-logging-skeleton.ts` 파일을 열어 스택을 추가할 것입니다.
+**bin/centralized-logging-skeleton.ts** 파일을 열어 스택을 추가할 것입니다.
 
 다음 코드를 추가하여 스택을 import 합니다.
 
@@ -169,7 +169,7 @@ API 호출 url 형식은 다음과 같습니다.
 https://{restapi_id}.execute-api.{region}.amazonaws.com/{stage_name}/
 ```
 
-`{restapi_id}` 부분을 본인의 `API id`로 교체하고 `{region}`은 `us-east-2`로 수정, `{stage_name}`은 `prod`로 수정 합니다.
+`{restapi_id}` 부분을 본인의 **API id**로 교체하고 `{region}`은 `us-east-2`로 수정, `{stage_name}`은 `prod`로 수정 합니다.
 
 다음은 예시 url 입니다.
 

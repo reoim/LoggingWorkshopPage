@@ -5,13 +5,13 @@ pre: "<b>6-1. </b>"
 ---
 ***
 
-로그 `필터 패턴`을 사용하여 `지표 필터`를 생성하고 로그 이벤트에서 일치하는 단어, 구문 도는 값을 검색할 수 있습니다. `지표 필터`가 로그 이벤트에서 일치되는 값을 찾으면 `CloudWatch 지표`의 값을 증가시키도록 설정 할 수 있습니다. 예를 들어 로그 이벤트에서 ERROR 라는 단어를 검색하는 지표 필터를 생성하여 발생 횟수를 `CloudWatch 지표`에 게시하도록 할 수 있습니다.
+로그 **필터 패턴**을 사용하여 **지표 필터**를 생성하고 로그 이벤트에서 일치하는 단어, 구문 도는 값을 검색할 수 있습니다. **지표 필터**가 로그 이벤트에서 일치되는 값을 찾으면 **CloudWatch 지표**의 값을 증가시키도록 설정 할 수 있습니다. 예를 들어 로그 이벤트에서 ERROR 라는 단어를 검색하는 지표 필터를 생성하여 발생 횟수를 CloudWatch 지표에 게시하도록 할 수 있습니다.
 
-이 페이지에서는 `CloudTrail` 로그 그룹에 지표 필터를 생성하여 누군가 `CloudTrail`을 생성, 수정, 삭제, 로깅 중지, 로깅 시작 등의 작업을 수행할 경우  `CloudWatch 알람`을 발생하도록 설정 할 것입니다.
+이 페이지에서는 CloudTrail 로그 그룹에 지표 필터를 생성하여 누군가 CloudTrail을 생성, 수정, 삭제, 로깅 중지, 로깅 시작 등의 작업을 수행할 경우 **CloudWatch 알람**을 발생하도록 설정 할 것입니다.
 
 ## 지표 필터 및 지표 생성
 
-`lib/cloudtrail-stack.ts` 파일을 열고 다음 코드를 추가하여 필요한 모듈들을 import 합니다.
+**lib/cloudtrail-stack.ts** 파일을 열고 다음 코드를 추가하여 필요한 모듈들을 import 합니다.
 
 ```typescript
 import * as sns from '@aws-cdk/aws-sns';
@@ -52,9 +52,9 @@ import * as cw_actions from '@aws-cdk/aws-cloudwatch-actions';
 
 ## 알람 생성 및 SNS 연동
 
-위에서 만든 지표 필터를 이용하여 `CloudWatch 지표`를 생성하고 해당 지표를 사용하여 `CloudWatch 알람`을 생성합니다.
+위에서 만든 지표 필터를 이용하여 CloudWatch 지표를 생성하고 해당 지표를 사용하여 CloudWatch 알람을 생성합니다.
 
-다음 코드를 추가하세요. 5분(default period) 내에 1번 이상의 `CloudTrail` 변경이 일어날 경우 알람을 발생시키는 코드 입니다.
+다음 코드를 추가하세요. 5분(default period) 내에 1번 이상의 CloudTrail 변경이 일어날 경우 알람을 발생시키는 코드 입니다.
 
 ```typescript
     // Expose a metric form the metric filter
@@ -84,7 +84,7 @@ import * as cw_actions from '@aws-cdk/aws-cloudwatch-actions';
 
 context의 `email` 값을 본인의 email로 변경합니다.
 
-`cdk.json` 파일의 열어봅니다.
+**cdk.json** 파일의 열어봅니다.
 
 ```json
 {
@@ -107,7 +107,7 @@ context의 `email` 값을 본인의 email로 변경합니다.
 
 ## 배포하기
 
-완성된 `lib/cloudtrail-stack.ts` 코드는 다음과 같습니다.
+완성된 **lib/cloudtrail-stack.ts** 코드는 다음과 같습니다.
 
 ```typescript
 import * as cdk from '@aws-cdk/core';
@@ -197,7 +197,7 @@ cdk deploy CloudtrailStack
 
 ## 테스트
 
-[CloudTrail 콘솔](https://us-east-2.console.aws.amazon.com/cloudtrail/home?region=us-east-2#/dashboard)로 이동하여 `CloudTrailStack`으로 생성했던 `CloudTrail`을 선택합니다.
+[CloudTrail 콘솔](https://us-east-2.console.aws.amazon.com/cloudtrail/home?region=us-east-2#/dashboard)로 이동하여 **CloudTrailStack**으로 생성했던 CloudTrail을 선택합니다.
 
 ![trail change](/images/workshop3/trail1.png)
 

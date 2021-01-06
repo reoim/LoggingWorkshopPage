@@ -13,7 +13,7 @@ pre: "<b>4-4.b. </b>"
 
 ## 통합 CloudWatch agent 설정 파일
 
-`resources/cfn-init/amazon-cloudwatch-agent.json` 파일을 열어 미리 작성된 `CloudWatch agent 설정 파일`을 살펴봅니다.
+**resources/cfn-init/amazon-cloudwatch-agent.json** 파일을 열어 미리 작성된 **CloudWatch agent 설정 파일**을 살펴봅니다.
 
 ```json
 {
@@ -91,6 +91,11 @@ CloudWatch Agent 에 대한 보다 자세한 설정은 다음 링크를 참고 �
 **lib/webserver-stack.ts** 파일에서 [VPC Flow 로그](../vpc) 코드 밑에 다음의 코드를 추가 합니다.
 
 [cfn-init](https://docs.aws.amazon.com/ko_kr/AWSCloudFormation/latest/UserGuide/cfn-init.html)을 사용하여 CloudWatch Agent를 설치, 기동하는 설정을 정의 합니다.
+
+**cfn-init**은 CloudFormation 헬퍼 스크립트의 한 종류로 스택의 일부로 생성한 EC2 인스턴스에서 리소스 메타데이터를 검색 및 해석하고, 패키지를 설치하고, 파일을 생성하고 서비스를 시작하는 데 사용됩니다.
+
+cfn-init의 configs와 configSets를 다음과 같이 정의 합니다.
+
 ```typescript
 // (Config) Install the unified CloudWatch agent by cfn-init
 const configInstallAgent = new ec2.InitConfig([
@@ -165,13 +170,19 @@ const demo_instance = new ec2.Instance(this, 'DemoInstance', {
 
 이 스크립트는 Apache 웹서버를 설치, 기동하는 작업을 하며 `resources/userdata/bootstrap.sh` 에 위치합니다.
 
+인스턴스를 시작할 때 user data에 추가 된 스크립트를 실행하게 됩니다.
+
+**User data**에 대한 더 자세한 설명은 다음 링크를 참고하시길 바랍니다.
+
+[User guide: Running commands on your Linux instance at launch](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html)
+
 ```typescript
 // Add userdata (bootstrap)
 const bootstrap = fs.readFileSync('resources/userdata/bootstrap.sh', 'utf8');
 demo_instance.addUserData(bootstrap);  
 ```
 
-다음 코드를 추가하여 웹서버의 보안그룹을 생성하고 http와 ssh 포트를 허용하는 인바운드 트래픽 룰을 설정합니다.
+다음 코드를 추가하여 웹서버의 [보안그룹](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html)을 생성하고 http와 ssh 포트를 허용하는 인바운드 트래픽 룰을 설정합니다.
 
 ```typescript
 // Define security group
@@ -330,7 +341,7 @@ export class WebServerStack extends cdk.Stack {
 import { WebServerStack } from '../lib/webserver-stack';
 ```
 
-`CloudtrailStack` 밑에 다음 코드를 추가합니다.
+**CloudtrailStack** 밑에 다음 코드를 추가합니다.
 
 ```typescript
 new WebServerStack(app, 'WebServerStack', { env: envRegion, bucket:logBucketStack.logBucket });

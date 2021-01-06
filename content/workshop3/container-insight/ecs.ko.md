@@ -6,7 +6,7 @@ weight: 210
 
 이 페이지에서는 [실습 1, CDK로 로깅 인프라 구축 - ECS 로그](../../../workshop1/ecs) 실습에서 활성화했던 Container Insight에 대해서 알아 봅니다.
 
-Container Insight 는 [`AWS 콘솔`이나 `AWS CLI`를 통해서도 활성화](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-container-insights.html) 할 수 있지만 우리는 앞선 실습에서 CDK로 다음과 같이 클러스터를 정의하여 활성화 했습니다.
+Container Insight 는 [**AWS 콘솔**이나 **AWS CLI**를 통해서도 활성화](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-container-insights.html) 할 수 있지만 우리는 앞선 실습에서 CDK로 다음과 같이 클러스터를 정의하여 활성화 했습니다.
 
 ```typescript
     // Create an ECS cluster
@@ -24,7 +24,7 @@ Container Insight 는 [`AWS 콘솔`이나 `AWS CLI`를 통해서도 활성화](h
 
 ![dashboard](/images/workshop3/ci-tree.png)
 
-`Performance Monitoring` 메뉴를 ECS 리소스들에 대한 여러가지 메트릭을 확인할 수 있습니다.
+`Performance Monitoring` 메뉴에서 ECS 리소스들에 대한 여러가지 메트릭을 확인할 수 있습니다.
 
 ![dashboard](/images/workshop3/container.gif)
 

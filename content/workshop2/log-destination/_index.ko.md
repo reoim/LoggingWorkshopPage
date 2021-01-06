@@ -19,9 +19,9 @@ pre: "<b>5-1. </b>"
 
 ## 중앙 로그 버킷 공유
 
-먼저 중앙 로그 버킷 object를 props로 전달 받기 위해 `lib/log-destination-stack.ts` 파일을 열어 다음과 같이 수정합니다.
+먼저 중앙 로그 버킷 object를 props로 전달 받기 위해 **lib/log-destination-stack.ts** 파일을 열어 다음과 같이 수정합니다.
 
-`LogBucketStack`에서 정의한 `interface`를 `import` 합니다.
+**LogBucketStack**에서 정의한 `interface`를 `import` 합니다.
 
 ```typescript
 import { BucketProps } from './log-bucket-stack';
@@ -104,9 +104,9 @@ Firehose delivery stream을 생성하는 설정입니다.
 
 ## Log destination IAM role설정
 
-위의 `Firehose` 설정 코드 밑에 다음 코드를 추가합니다.
+위의 Firehose 설정 코드 밑에 다음 코드를 추가합니다.
 
-`Log destination`에 부여할 `IAM role`을 생성하고 `Firehose`에 데이터를 전송할 수 있도록 권한을 부여합니다.
+Log destination에 부여할 IAM role을 생성하고 Firehose에 데이터를 전송할 수 있도록 권한을 부여합니다.
 
 ```typescript
     // Create IAM role for log destination
@@ -127,7 +127,7 @@ Firehose delivery stream을 생성하는 설정입니다.
 &nbsp;
 
 ## Log destination access policy 설정
-베이스 프로젝트에 제공하는 `resources/policies/log-access-policy.json` 파일을 열어봅니다.
+베이스 프로젝트에 제공하는 **resources/policies/log-access-policy.json** 파일을 열어봅니다.
 
 ```json
 {
@@ -171,7 +171,7 @@ Firehose delivery stream을 생성하는 설정입니다.
 }
 ```
 
-다시 `lib/log-destination-stack.ts` 파일로 돌아와서 
+다시 **lib/log-destination-stack.ts** 파일로 돌아와서 
 
 다음 코드를 추가하여 수정한 Access Policy를 읽어옵니다.
 
@@ -184,7 +184,7 @@ Firehose delivery stream을 생성하는 설정입니다.
 
 ## Log destination 설정
 
-다음 코드를 추가하여 `Log destination`을 생성합니다.
+다음 코드를 추가하여 Log destination을 생성합니다.
 
 ```typescript
     // Create log destination
@@ -196,14 +196,14 @@ Firehose delivery stream을 생성하는 설정입니다.
     });
 ```
 
-다음 코드를 추가하여 `Log destination`이 생성되기 전에 반드시 `Firehose`가 준비되도록 설정 합니다.
+다음 코드를 추가하여 Log destination이 생성되기 전에 반드시 Firehose가 준비 되도록 설정 합니다.
 
 ```typescript
     // Make sure the Firehose delivery stream is provisioned when deploy the log destination.
     logDestination.addDependsOn(firehoseDeliverySteram);
 ```
 
-다음 코드를 추가하여 생성된 `Log destination`의 ARN을 `CloudFormation` Output으로 출력합니다.
+다음 코드를 추가하여 생성된 Log destination의 ARN을 CloudFormation Output으로 출력합니다.
 
 ```typescript
 new cdk.CfnOutput(this, 'Log destination arn', { value: logDestination.attrArn });
@@ -300,7 +300,7 @@ export class LogDestinationStack extends cdk.Stack {
 &nbsp;
 
 ## 앤트리포인트에 스택 추가하기
-`bin/centralized-logging-skeleton.ts` 파일을 열어 LogDestinationStack을 추가합니다.
+**bin/centralized-logging-skeleton.ts** 파일을 열어 LogDestinationStack을 추가합니다.
 
 다음 코드를 추가하여 LogDestinationStack import 합니다.
 

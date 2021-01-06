@@ -31,13 +31,13 @@ import fs = require('fs');
     });
 ```
 
-위와 같이 `VPC`를 `CDK`로 생성하면 기본적으로 필요한 `Internet Gateway`, `NAT Gateway` 등이 자동으로 생성되며 라우팅 룰도 자동으로 정의 됩니다.
+위와 같이 VPC를 CDK로 생성하면 기본적으로 필요한 Internet Gateway, NAT Gateway 등이 자동으로 생성되며 라우팅 룰도 자동으로 정의 됩니다.
 
 &nbsp;
 
 ## VPC Flow 로그 활성화
 
-다음 코드를 추가하여 `VPC Flow Log`를 저장할 로그 그룹을 생성 합니다. 로그 보관 기간은 1주일로 지정하였습니다.
+다음 코드를 추가하여 VPC Flow Log를 저장할 로그 그룹을 생성 합니다. 로그 보관 기간은 1주일로 지정하였습니다.
 
 ```typescript
     // Create LogGroup for VPC Flow Log

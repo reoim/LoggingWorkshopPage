@@ -29,7 +29,7 @@ Amazon CloudWatch 대시보드를 사용하여 여러 리전/계정에 분산되
 
 &nbsp;
 
-`Account ID` 필드에 모니터링 계정 ID를 입력하고 `Permissions`는 아래와 같이 `Full read-only..`로 변경합니다.
+**Account ID** 필드에 모니터링 계정 ID를 입력하고 **Permissions**는 아래와 같이 `Full read-only..`로 변경합니다.
 
 그 다음 `Launch CloudFormation template`를 클릭합니다.
 
@@ -45,7 +45,7 @@ Amazon CloudWatch 대시보드를 사용하여 여러 리전/계정에 분산되
 
 ![cross](/images/workshop3/share-data3.png)
 
-정상적으로 `CloudWatch-CrossAccountSharingRole`이 생성된 것을 확인합니다.
+정상적으로 **CloudWatch-CrossAccountSharingRole**이 생성된 것을 확인합니다.
 
 ![cross](/images/workshop3/share-data4.png)
 
@@ -97,7 +97,7 @@ Amazon CloudWatch 대시보드를 사용하여 여러 리전/계정에 분산되
 
 ## 다른 계정으로 전환
 
-`View account` 기능으로는 CloudWatch 지표와 대시보드, 로그 위젯, 알람만 접근이 가능했습니다. 로그 그룹이나 `Logs insight`등은 사용이 불가능합니다.
+**View account** 기능으로는 CloudWatch 지표와 대시보드, 로그 위젯, 알람만 접근이 가능했습니다. 로그 그룹이나 Logs insight 등은 사용이 불가능합니다.
 
 `Switch to this account`를 클릭하여 콘솔에서 계정을 전환하면 Read only 권한으로 모든 서비스들에 접근이 가능합니다.
 
@@ -105,7 +105,7 @@ Amazon CloudWatch 대시보드를 사용하여 여러 리전/계정에 분산되
 
 &nbsp;
 
-`Display Name`을 입력하고 `Switch Role`을 클릭합니다.
+**Display Name**을 입력하고 `Switch Role`을 클릭합니다.
 
 ![cross](/images/workshop3/cross6.png)
 
@@ -113,7 +113,7 @@ Amazon CloudWatch 대시보드를 사용하여 여러 리전/계정에 분산되
 
 Read only 권한으로 다른 계정 콘솔에 접속한 것을 확인할 수 있습니다.
 
-로그 그룹 및 `Logs Insight`는 물론, `CloudWatch`가 아닌 다른 서비스들에도 읽기 권한으로 접근이 가능합니다. (읽기 권한 이상이 필요한 서비스에는 접근이 되지 않습니다.)
+로그 그룹 및 Logs Insight는 물론, CloudWatch가 아닌 다른 서비스들에도 읽기 권한으로 접근이 가능합니다. (읽기 권한 이상이 필요한 서비스에는 접근이 되지 않습니다.)
 
 ![cross](/images/workshop3/cross7.png)
 

@@ -6,7 +6,6 @@ defaultContentLanguage = "ko"
 theme = "learn"
 showHeaderLanguageChooser=true
 defaultContentLanguageInSubdir= true
-uglyurls = true
 relativeURLs=true
 CanonifyURLs=true
 metaDataFormat = "yaml"

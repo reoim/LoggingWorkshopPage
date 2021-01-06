@@ -22,13 +22,13 @@ weight: 210
 
 ## 필드 검색
 
-`Logs Insight`는 로그 안의 로그 필드 검색 기능을 지원 합니다. AWS 서비스 로그들(VPC flow 로그, CloudTrail 로그 등)과 Json 포멧의 로그들은 자동으로 필드 검색이 되며 이밖의 타입들의 로그들도 기본적으로 `@timestamp, @ingestionTime, @logStream, @message, @log` 의 시스템 필드가 생성되며 로그 내용은 `@message` 필드로 검색됩니다. 
+**Logs Insight**는 로그 안의 로그 필드 검색 기능을 지원 합니다. AWS 서비스 로그들(VPC flow 로그, CloudTrail 로그 등)과 Json 포멧의 로그들은 자동으로 필드 검색이 되며 이밖의 타입들의 로그들도 기본적으로 `@timestamp, @ingestionTime, @logStream, @message, @log` 의 시스템 필드가 생성되며 로그 내용은 `@message` 필드로 검색됩니다. 
 
 필드 검색에 대한 좀 더 자세한 내용은 [CloudWatch User Guide](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData-discoverable-fields.html)를 참고하시길 바랍니다.
 
 &nbsp;
 
-`Logs Insight` 콘솔 우측의 `Fields` 버튼을 클릭합니다.
+Logs Insight 콘솔 우측의 `Fields` 버튼을 클릭합니다.
 
 ![Logs Insight Fields](/images/workshop3/field.png)
 
@@ -83,9 +83,9 @@ Visualization 탭을 이용하여 집계 결과를 그래프로 확인할 수도
 
 ## 샘플 쿼리
 
-`Logs Insight` 콘솔 우측에 `Queries` 버튼을 클릭하면 다양한 샘플 쿼리들을 확인 할 수 있습니다.
+Logs Insight 콘솔 우측에 `Queries` 버튼을 클릭하면 다양한 샘플 쿼리들을 확인 할 수 있습니다.
 
-로그 그룹을 선택하고 `Lambda`와 `VPC Flow Logs`, `CloudTrail` 등 샘플 쿼리들을 실행 해봅니다.
+로그 그룹을 선택하고 Lambda와 VPC Flow Logs, CloudTrail 등 샘플 쿼리들을 실행 해봅니다.
 
 ![sample query](/images/workshop3/sample.png)
 

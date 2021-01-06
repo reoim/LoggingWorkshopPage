@@ -5,13 +5,13 @@ pre: "<b>4-6. </b>"
 ---
 ***
 
-이 페이지에서는 `CDK`를 이용하여 샘플 `ECS` 애플리케이션을 배포하고 `firelens` 로그 드라이버를 사용하여 `CloudWatch Log`에 로깅하는 설정을 알아볼 것입니다.
+이 페이지에서는 **CDK를 이용하여 샘플 ECS 애플리케이션을 배포하고 firelens 로그 드라이버를 사용하여 CloudWatch Logs에 로깅하는 설정**을 알아볼 것입니다.
 
 &nbsp;
 
 ## Cluster 생성
 
-`ecs-stack.ts` 파일을 열어 다음 모듈들을 추가합니다.
+**ecs-stack.ts** 파일을 열어 다음 모듈들을 추가합니다.
 
 ```typescript
 import * as logs from '@aws-cdk/aws-logs';
@@ -23,7 +23,7 @@ import * as elbv2 from '@aws-cdk/aws-elasticloadbalancingv2';
 ```
 
 
-`constructor`에 다음 코드를 추가하여  `ECS` 클러스터를 배포할 `VPC` 네트워크를 생성합니다.
+`constructor`에 다음 코드를 추가하여  ECS 클러스터를 배포할 VPC 네트워크를 생성합니다.
 
 ```typescript
     // Create VPC
@@ -69,7 +69,7 @@ import * as elbv2 from '@aws-cdk/aws-elasticloadbalancingv2';
     const containerTaskRole = new iam.Role(this, "TaskRole", {
       assumedBy: new iam.ServicePrincipal('ecs-tasks.amazonaws.com')
     });
-    
+
     // Add permissions of the log group to the role
     containerTaskRole.addToPolicy(new iam.PolicyStatement({
         effect: iam.Effect.ALLOW,
@@ -243,7 +243,7 @@ export class EcsStack extends cdk.Stack {
 &nbsp;
 
 ## 앤트리포인트에 스택 추가하기
-`bin/centralized-logging-skeleton.ts` 파일을 열어 EcsStack을 추가합니다.
+**bin/centralized-logging-skeleton.ts** 파일을 열어 EcsStack을 추가합니다.
 
 다음 코드를 추가하여 EcsStack을 import 합니다.
 

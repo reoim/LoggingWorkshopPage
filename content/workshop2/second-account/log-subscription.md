@@ -7,11 +7,11 @@ pre: "<b>5-2.c. </b>"
 
 이 페이지에서는 로그 생성을 위해 실습 1에서 배포한것과 동일한 간단한 서버리스 워크로드를 배포할 것입니다.
 
-그리고 로그 구독 필터 기능을 이용해 `CloudWatch Logs` 로그 그룹에 수집되는 로그를 Log destination으로 내보내는 설정을 알아볼 것입니다.
+그리고 로그 구독 필터 기능을 이용해 CloudWatch Logs 로그 그룹에 수집되는 로그를 Log destination으로 내보내는 설정을 알아볼 것입니다.
 
 ## API gateway, 람다 로깅
 
-`lib/serverless-stack.ts` 파일에 다음 코드를 추가하여 필요한 모듈들을 import 합니다.
+**lib/serverless-stack.ts** 파일에 다음 코드를 추가하여 필요한 모듈들을 import 합니다.
 
 ```typescript
 import * as lambda from '@aws-cdk/aws-lambda';
@@ -50,7 +50,7 @@ import * as logs from '@aws-cdk/aws-logs';
 
 ## Context value 수정
 
-`cdk.json` 파일을 열어봅니다.
+**cdk.json** 파일을 열어봅니다.
 
 ```json
 {
@@ -157,7 +157,7 @@ export class ServerlessStack extends cdk.Stack {
 
 ## 엔트리포인트에 스택 추가하기
 
-`bin/centralized-logging-skeleton.ts` 파일을 열어 ServerlessStack을 import 합니다.
+**bin/centralized-logging-skeleton.ts** 파일을 열어 ServerlessStack을 import 합니다.
 
 ```typescript
 import { ServerlessStack } from '../lib/serverless-stack';
@@ -203,7 +203,7 @@ cdk deploy ServerlessStack
 
 ![API gateway](/images/workshop1/api-gateway.png)
  
-배포된 `API id`를 이용해 API를 호출 해봅니다.
+배포된 **API id**를 이용해 API를 호출 해봅니다.
 
 API 호출 url 형식은 다음과 같습니다.
 
@@ -211,7 +211,7 @@ API 호출 url 형식은 다음과 같습니다.
 https://{restapi_id}.execute-api.{region}.amazonaws.com/{stage_name}/
 ```
 
-`{restapi_id}` 부분을 본인의 `API id`로 교체하고 `{region}`은 `us-east-2`로 수정, `{stage_name}`은 `prod`로 수정 합니다.
+`{restapi_id}` 부분을 본인의 **API id**로 교체하고 `{region}`은 `us-east-2`로 수정, `{stage_name}`은 `prod`로 수정 합니다.
 
 다음은 예시 url 입니다.
 
