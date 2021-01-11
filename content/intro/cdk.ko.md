@@ -1,7 +1,6 @@
 ---
 title: AWS CDK
 weight: 300
-chapter: true
 pre: "<b>1-3. </b>"
 ---
 

@@ -1,7 +1,6 @@
 ---
 title: CloudWatch Logs
 weight: 200
-chapter: true
 pre: "<b>1-2. </b>"
 ---
 
