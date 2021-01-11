@@ -4,19 +4,19 @@ weight: 100
 pre: "<b>2-1. </b>"
 ---
 
-{{% notice info %}}
-이미 AWS 계정을 가지고 있다면 바로 이 실습의 가이드를 따라 진행할 수 있으나 계정이 없다면 먼저 AWS 계정을 만들어야 합니다.
+{{% notice warning %}}
+본인의 AWS 계정에서 워크샵 실습을 진행하는 경우에만 아래 안내에 따라 진행하세요. AWS에서 주최하는 이벤트에 참여하는 경우는 [AWS 이벤트 엔진으로 시작하기](../start-event-engine)로 이동하세요.
 {{% /notice %}}
 
 
-관리자 권한이 있는 **AWS 계정**이 아직 _없는_ 경우, [여기를 클릭](https://aws.amazon.com/ko/premiumsupport/knowledge-center/create-and-activate-aws-account/)하여 계정을 생성합니다.
+관리자 권한이 있는 **AWS 계정**이 아직 없는 경우, [여기를 클릭](https://aws.amazon.com/ko/premiumsupport/knowledge-center/create-and-activate-aws-account/)하여 계정을 생성합니다.
 
 
 * * *
 ### IAM 사용자
 **AWS 계정**을 생성했거나 이미 있는 경우, AWS 계정에 접근할 수 있는 **IAM 사용자**를 생성합니다. 계정에 로그인한 후, IAM 콘솔을 사용하여 IAM 사용자를 생성할 수 있습니다. 아래의 순서에 따라 Administrator(관리자) 권한을 가진 사용자를 생성합니다. 이미 관리자 권한을 가진 IAM 사용자가 있다면, 다음 작업을 건너뜁니다.
 
-1. [로그인 페이지](https://console.aws.amazon.com/)에서 AWS 계정 이메일 주소와 비밀번호를 사용하여 **AWS 계정의 root 사용자**로 [IAM 콘솔](https://console.aws.amazon.com/iam/home#/home)에 로그인 합니다.
+1. [로그인 페이지](https://console.aws.amazon.com/)에서 AWS 계정 이메일 주소와 비밀번호를 사용하여 **AWS 계정의 root 사용자**로 로그인 후 [IAM 콘솔](https://console.aws.amazon.com/iam/home#/home)로 이동합니다.
 2. IAM 콘솔 화면 왼쪽 사이드 바에서 **Users**(사용자)를 클릭한 다음, **Add user**(사용자 추가) 버튼을 클릭합니다.
 3. **User name**(사용자 이름)은 `Administrator`로 입력합니다.
 4. Access type(엑세스 유형)에서 **AWS Management Console access** 체크 박스를 선택하고, **Custom password**를 선택한 다음 비빌번호를 입력합니다.

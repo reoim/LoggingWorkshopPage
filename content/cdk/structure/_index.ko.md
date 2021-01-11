@@ -4,17 +4,11 @@ weight: 300
 pre: "<b>3-3. </b>"
 ---
 
-## IDE 열기
-
-
-이제 여러분이 주로 사용하시는 IDE를 열어서 프로젝트 내용을 확인해봅시다.
-> VSCode를 이용하시는 경우, 프로젝트 디렉토리에서 `code .`를 입력하면 IDE를 열 수 있습니다.
-
 ## 프로젝트 디렉토리 탐색
 
-IDE가 열리면 다음과 같은 구조를 볼 수 있습니다:
+프로젝트 구조는 다음과 같습니다.
 
-![](/images/cdk/structure.png)
+![structure](/images/cdk/structure1.png)
 
 * __`lib/cdk-workshop-stack.ts`__ CDK 어플리케이션의 메인 스택이 정의되는 곳입니다.  
   우리가 대부분의 시간을 쏟을 곳입니다.

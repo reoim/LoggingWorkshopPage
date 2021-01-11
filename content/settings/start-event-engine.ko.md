@@ -15,6 +15,12 @@ AWS Wokshop Portal에 로그인하여 실습을 진행하실 경우, **Team Hash
 
 ![AWS Workshop Portal](/images/settings/event-engine-initial-screen.png)
 
-다음 화면에서 **AWS Console 버튼**을 누르면 아래의 화면과 같이 콘솔에 로그인할 수 있는 로그인 링크를 받을 수 있습니다. **Open AWS Console 버튼**을 누르면 AWS Console 창으로 접속할 수 있습니다. 또한, CLI 환경을 위한 Access Key와 Secret Access Key도 확인할 수 있습니다. 
+다음 대시보드 화면에서 **AWS Console 버튼**을 누릅니다.
+
+![Event Engine Dashboard](/images/settings/event-engine-dashboard.png)
+
+다음 화면에서 **Open AWS Console 버튼**을 누르면 AWS Console 창으로 접속할 수 있습니다. 또한, CLI 환경을 위한 Access Key와 Secret Access Key도 확인할 수 있습니다. 
+
+![Event Engine Console](/images/settings/event-engine-aws-console.png)
 
 위의 단계를 모두 수행했다면 실습을 시작할 수 있습니다.

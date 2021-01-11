@@ -4,18 +4,11 @@ weight: 300
 pre: "<b>3-3. </b>"
 ---
 
-
-## Open your IDE
-
-Now's a good time to open the project in your favorite IDE and explore.
-
-> If you use VSCode, you can just type `code .` within the project directory.
-
 ## Explore your project directory
 
-You'll see something like this:
+The project structure is as follows:
 
-![](/images/cdk/structure.png)
+![structure](/images/cdk/structure1.png)
 
 * __`lib/cdk-workshop-stack.ts`__ is where your CDK application's main stack is defined.
   This is the file we'll be spending most of our time in.

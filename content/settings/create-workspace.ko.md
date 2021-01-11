@@ -11,7 +11,7 @@ pre: "<b>2-3. </b>"
 {{% /notice %}}
 
 ## Workspace 생성하기
-1. [Cloud9 콘솔](https://us-east-1.console.aws.amazon.com/cloud9/home?region=us-east-1)으로 
+1. [Cloud9 콘솔](https://us-east-2.console.aws.amazon.com/cloud9/home?region=us-east-2)으로 
 이동하여 **Create environment** 를 클릭 합니다.
 
 ![Create C9 envrionment](/images/settings/c9-create.png)
