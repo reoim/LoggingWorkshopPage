@@ -2,7 +2,7 @@
 title: "Log subscription filter로 중앙 로깅 설정"
 chapter: true
 weight: 200
-pre: "<b>5-2. </b>"
+pre: "<b>6-2. </b>"
 ---
 
 {{% notice info %}}

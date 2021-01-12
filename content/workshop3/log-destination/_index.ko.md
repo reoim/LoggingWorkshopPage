@@ -1,7 +1,7 @@
 ---
 title: "Log destination 설정"
 weight: 100
-pre: "<b>5-1. </b>"
+pre: "<b>6-1. </b>"
 ---
 ***
 

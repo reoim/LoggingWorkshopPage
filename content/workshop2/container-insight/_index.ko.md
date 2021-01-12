@@ -2,7 +2,7 @@
 title: "Container Insight"
 weight: 300
 chapter: true
-pre: "<b>6-3. </b>"
+pre: "<b>5-3. </b>"
 ---
 
 CloudWatch Container Insights는 컨테이너화된 응용 프로그램이나 마이크로서비스에서 메트릭 및 로그를 수집하여 집계, 요약합니다. 메트릭은 CPU, 메모리, 디스크, 네트워크 등의 리소스 사용률이 포함됩니다. 메트릭은 CloudWatch 대시 보드에서도 사용할 수 있습니다. 
